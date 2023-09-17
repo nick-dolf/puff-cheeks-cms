@@ -42,8 +42,20 @@ async function verify() {
     if (!ignoreData.match(/secrets/)) {
       if (ignoreData.slice(-1) == "\n") {
         fse.appendFileSync(".gitignore", `secrets\n`);
+        ignoreData += "\n"
       } else {
         fse.appendFileSync(".gitignore", `\nsecrets\n`);
+        ignoreData += "\n"
+      }
+    }
+
+    if (!ignoreData.match(/site/)) {
+      if (ignoreData.slice(-1) == "\n") {
+        fse.appendFileSync(".gitignore", `site\n`);
+        ignoreData += "\n"
+      } else {
+        fse.appendFileSync(".gitignore", `\nsite\n`);
+        ignoreData += "\n"
       }
     }
   } catch {
