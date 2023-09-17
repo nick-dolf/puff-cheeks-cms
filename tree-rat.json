@@ -1,0 +1,6 @@
+{
+  "enableGzipCompression": false,
+  "enableAutoPrefixer": false,
+  "stagingUrl": "/",
+  "productionUrl": "/"
+}
