@@ -4,12 +4,15 @@ const fse = require("fs-extra");
 const PORT = process.env.PORT;
 const express = require("express");
 const app = express();
+module.exports = app;
 const chokidar = require("chokidar");
 
 fse.ensureDirSync("pages");
 fse.ensureDirSync("site");
 
 require("./utils/config").verify();
+require("./utils/setup").variables();
+require("./utils/setup").folders();
 
 fse.outputFile("site/index.html", `<h1>Site</h1>
                                    <p>Hello World</p>`);
@@ -25,8 +28,7 @@ app.listen(PORT, () => {
   console.log(`Port: ${PORT}`);
   console.log(`Site: http://localhost:${PORT}/`);
   console.log(`Admin: http://localhost:${PORT}/admin`);
-  //localhost:7533/
-  http: console.log("--");
+  console.log("--");
 });
 
 
