@@ -1,21 +1,18 @@
 #!/usr/bin/env node
 require("dotenv").config({ override: true });
-const fse = require("fs-extra");
+
 const PORT = process.env.PORT;
 const express = require("express");
 const app = express();
 module.exports = app;
-const chokidar = require("chokidar");
 
-fse.ensureDirSync("pages");
-fse.ensureDirSync("site");
+
 
 require("./utils/config").verify();
 require("./utils/setup").variables();
 require("./utils/setup").folders();
-
-fse.outputFile("site/index.html", `<h1>Site</h1>
-                                   <p>Hello World</p>`);
+require("./utils/render").setup();
+require("./utils/reload").setup();
 
 app.use(express.static("site"));
 

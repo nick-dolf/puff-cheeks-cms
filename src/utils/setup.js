@@ -56,6 +56,9 @@ function variables() {
   app.locals.site.users = app.locals.users.data;
 }
 
+/**
+ * Set up Directories
+ */
 function folders() {
   fse.ensureDirSync(app.locals.siteDir);
   fse.ensureDirSync(app.locals.siteDir + "/assets/images");
