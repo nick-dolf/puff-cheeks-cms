@@ -1,0 +1,119 @@
+.page-row {
+  background: $white-trans;
+  border-radius: $border-radius;
+  color: black;
+  list-style-type: none;
+  margin-bottom: 8px;
+  min-height: 3.5rem;
+  
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include tablet {
+    flex-wrap: nowrap;
+  }
+
+  .page-row-handle {
+    cursor: pointer;
+    background-color: white;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+
+    border-top-left-radius: $border-radius;
+
+    @include tablet {
+      border-bottom-left-radius: $border-radius;
+    }
+  }
+
+  .page-row-button {
+    width: 80px;
+    border-radius: 0;
+    border-top-right-radius: $border-radius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      border-bottom-right-radius: $border-radius;
+      order: 6;
+    }
+  }
+
+  .break {
+    flex-basis: 100%;
+
+    @include tablet {
+      flex-basis: 0;
+    }
+  }
+
+  .page-row-name {
+    min-height: 3.5rem;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    @include tablet {
+      flex-basis: auto;
+    }
+
+    a {
+      color: black;
+    }
+  }
+
+  .filler {
+    @include tablet {
+      flex: 1;
+    }
+  }
+
+  .publish-state {
+    min-height: 3.5rem;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+}
+
+.drop-icon {
+  width: 60px;
+  transition: all $transition-std;
+  display: flex;
+  justify-content: center;
+
+
+  @include tablet {
+    order:5;
+  }
+
+  .drop-icon-menu {
+    z-index: 10;
+    line-height: 1.5;
+    padding: 8px;
+    background: $dark-trans;
+    position: absolute;
+
+    transform: translateY(3.5rem) scaleY(0);
+    transition: all $transition-std;
+  }
+
+  &:hover {
+    color: white;
+    background: $dark-trans;
+
+    .drop-icon-menu {
+      transform: translateY(3.5rem) scaleY(1);
+    }
+  }
+}

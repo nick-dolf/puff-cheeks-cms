@@ -1,0 +1,35 @@
+.icon-svg {
+  cursor: pointer;
+  transition: color $transition-std, opacity $transition-std;
+}
+
+.icon-black {
+  color: black;
+  transition: color $transition-std;
+
+  &:hover {
+    color: $dark-trans;
+  }
+}
+
+.icon-white {
+  color: white;
+  transition: color $transition-std;
+
+  &:hover {
+    color: $dark-trans;
+  }
+}
+
+.icon-grey {
+  color: grey;
+  transition: color $transition-std;
+
+  &:hover {
+    color: $dark-trans;
+  }
+}
+
+.icon-transparent {
+  opacity: 0;
+}

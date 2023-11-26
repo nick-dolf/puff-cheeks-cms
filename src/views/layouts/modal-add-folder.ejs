@@ -1,0 +1,29 @@
+<div id="modal-add-folder" class="modal">
+  <div class="modal-content">
+
+      <h2>Add Folder</h2>
+
+      <form id="add-folder">
+        <div class="floating-label">
+          <label for="name">Folder Name</label>
+          <input type="text" name="name" id="name">
+        </div>
+      </form>
+
+      <div class="modal-buttons">
+        <%- include("../components/button", {text: "Cancel", 
+                                             color:"cancel",
+                                             extraClass: "hide-modal" })%>
+        <%- include("../components/button", {text: "Add", 
+                                             color: "action",
+                                             extraClass: "create",
+                                             spinner: true,
+                                             cmsModal: "modal-add-folder", 
+                                             cmsForm: "add-folder",
+                                             cmsUrl: site.url+"admin/page-folders",
+                                             cmsAnchor: "pages-accordion-anchor",
+                                             cmsText: "Adding Folder" })%>
+      </div>
+
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<!-- Page List Item for Page Accordion -->
+<li class="page-row">
+  
+  <!-- Handle -->
+  <div class="page-row-handle">
+    <%- include("../components/icon-svg", {symbol:"grip-horizontal", 
+                                           color: "black", 
+                                           width: 30})%>
+  </div>
+
+
+  <!-- Drop Menu -->
+  <div class="drop-icon">
+    <%- include("../components/icon-svg", {symbol: "nut", 
+                                           width: 20 }) %>
+    <div class="drop-icon-menu">
+      <%- include("../components/button", {text: "Delete", 
+                      color:"danger", 
+                      extraClass:"delete drop-menu-item", 
+                      cms: page.link,
+                      cmsText: "Do you really want to delete: ", 
+                      cmsAnchor:"pages-accordion-anchor",
+                      cmsUrl:site.url+"admin/pages" }) %>
+    </div>
+  </div>
+
+  <!-- Button -->
+  <a href="<%= site.url %>admin/pages/<%= page.link %>" class="page-row-button button button-link">Edit</a>
+
+  <div class="break"></div>
+
+  <!-- Page Name -->
+  <div class="page-row-name">
+  <% if (page.publishedDate) { %>
+    <% let link = (page.link == "home" ? "" : page.link) %>
+    <h2><a href="<%- site.url + link %>"><%- page.name %></a></h2>
+  <% } else { %>
+    <h2><%- page.name %></h2>
+  <% } %>
+  </div>
+
+  <div class="filler"></div>
+
+  <!-- Publish Status -->
+  <div class="publish-state">
+    <% if (page.publishedDate) { %>
+      <%- include("../components/icon-svg", {symbol: "check-square-fill", 
+                                             width: 20,
+                                             color: "text-success"}) %>
+    <% } else { %>
+      <%- include("../components/icon-svg", {symbol: "x-square-fill", 
+                                             width: 20,
+                                             color: "text-black"}) %>
+      Not Published
+    <% } %>
+  </div>
+
+</li>

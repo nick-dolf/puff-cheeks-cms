@@ -1,4 +1,5 @@
 {
   "watch": ["src"],
+  "ignore":["admin-script.js"],
   "ext": "js, scss, ejs, svg"
 }

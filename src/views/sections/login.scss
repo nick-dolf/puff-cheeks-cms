@@ -1,0 +1,26 @@
+.login {
+  background-color: $dark-trans;
+  border-radius: $border-radius;
+  padding: 32px;
+  max-width: 300px;
+  margin: auto;
+  margin-top: 64px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.login-header {
+  text-align: center;
+  color: white;
+  margin: auto;
+
+  h1, p {
+    margin: 0;
+  }
+}

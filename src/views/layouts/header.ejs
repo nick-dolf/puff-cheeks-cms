@@ -1,0 +1,47 @@
+<% if (!page) page = {} %>
+<header class="site-header">
+  <div class="content">
+    <div>
+      <h1><a href="<%= site.url %>admin/"><%- site.title%> Admin</a></h1>
+      <nav class="header-nav">
+
+        <!-- Pages -->
+        <% if(page.link == "pages") { %>
+          <button class="button button-link" disabled>Pages</button>
+        <% } else { %>
+          <a href="<%= site.url %>admin/pages" class="button button-link">Pages</a>
+        <% } %>
+
+        <!-- Images -->
+        <% if(page.link == "images") { %>
+          <button class="button button-link" disabled>Images</button>
+        <% } else { %>
+          <a href="<%= site.url %>admin/images" class="button button-link">Images</a>
+        <% } %>
+
+        <!-- Files -->
+        <% if(page.link == "files") { %>
+          <button class="button button-link" disabled>Files</button>
+        <% } else { %>
+          <a href="<%= site.url %>admin/files" class="button button-link">Files</a>
+        <% } %>
+
+        <!-- Dev only -->
+        <% if(env == "development") { %>
+        <% if(page.link == "dev") { %>
+          <button class="button button-link" disabled>Dev</button>
+        <% } else { %>
+          <a href="<%= site.url %>admin/dev" class="button button-link">Dev</a>
+        <% } %>
+        <% } %>
+      </nav>
+    </div>
+    <div id="output"></div>
+    <div id="user-control">
+      <button class="button button-ghost show-modal" data-cms-target="modal-user">
+        <%- include("../components/icon-svg", {symbol: "user", color:"white"}) %>
+      </button>
+    </div>
+  </div>
+</header>
+<%- include("./modal-user")%>

@@ -1,0 +1,57 @@
+html {
+  min-width: 320px;
+  box-sizing: border-box;
+}
+
+/* Keeps box sizing consistent across elements, while allowing overides as neeeded */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url('background-opt.jpg');
+  background-image: url('background-opt.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+}
+
+main {
+  color: white;
+  min-height: calc(100vh - 134px);
+
+  background: $dark-subtle-trans;
+  @include spacing-std;
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.p-1 {
+  padding: 5px;
+}
+
+.p-2 {
+  padding: 10px;
+}
+
+.p-3 {
+  padding: 15px;
+}
+
+.mb-1 {
+  margin-bottom: 5px;
+}
+
+.mb-2 {
+  margin-bottom: 10px;
+}

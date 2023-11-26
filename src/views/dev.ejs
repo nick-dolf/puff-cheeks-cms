@@ -1,0 +1,23 @@
+<%- include("base/head", { page: { title: "Dashboard", description: "Manage Site" }})%> <%- include("layouts/header")%>
+
+<main class="container p-3">
+
+  <section class="p-3">
+    <%- include("components/page-row", {page: {name: "Test"}})%>
+  </section>
+
+  <section class="p-3">
+    <%- include("components/page-row", {page: {name: "Very Super Long Name Intensely So"}})%>
+  </section>
+
+  <section id="dev-section-anchor" >
+    <%- include("sections/dev-sections")%>
+  </section>
+
+  <section id="dev-block-anchor">
+    <%- include("sections/dev-blocks")%>
+  </section>
+
+</main>
+
+<%- include("base/foot")%>

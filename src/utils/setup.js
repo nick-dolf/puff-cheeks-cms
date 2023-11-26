@@ -10,6 +10,7 @@ function variables() {
   const config = fse.readJsonSync("tree-rat.json");
 
   app.locals.site = {};
+  app.locals.site.title = config.siteTitle;
 
   // Site Url
   if (process.env.NODE_ENV === "development") {
@@ -37,8 +38,9 @@ function variables() {
   app.locals.pages = new PuffCheeksStorage("pages", "link");
   app.locals.site.pages = app.locals.pages.data;
 
-  app.locals.folders = new PuffCheeksStorage("folders", "slug")
-  app.locals.site.folders = app.locals.folders.data;
+  app.locals.pageFolders = new PuffCheeksStorage("page-folders", "slug")
+  app.locals.site.pageFolders = app.locals.pageFolders.data;
+  app.locals.pageFolders.add({slug: "/", name:"/"})
 
   app.locals.blocks = new PuffCheeksStorage("blocks", "slug");
   app.locals.site.blocks = app.locals.blocks.data;
@@ -68,6 +70,25 @@ function folders() {
   fse.ensureDirSync(app.locals.viewDir);
   fse.ensureDirSync(app.locals.imgDir);
   fse.ensureDirSync(app.locals.fileDir);
+
+  
+  // Make Sure Home Page exists
+  app.locals.pages.add({
+    name: "Home",
+    slug: "home",
+    folder: "/",
+    link: "home",
+    publishedDate: false,
+    draftedDate: new Date().toString(),
+  })
+  try {
+    fse.statSync(app.locals.pageDir + "/drafts/home.json");
+  } catch {
+    fse.writeJsonSync(app.locals.pageDir + "/drafts/home.json", {
+      title: "",
+      description:""
+    });
+  }
 }
 
 module.exports = { variables, folders };

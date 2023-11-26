@@ -1,0 +1,23 @@
+<div id="modal-user" class="modal">
+  <div class="modal-content">
+
+      <h2>User Settings</h2>
+
+      <form id="user-settings">
+
+      </form>
+
+      <div class="modal-buttons">
+        <%- include("../components/button", {text: "Logout", 
+                                             color: "cancel",
+                                             extraClass: "logout",
+                                             spinner: true,
+                                             cmsModal: "modal-user", 
+                                             cmsForm: "add-folder",
+                                             cmsUrl: site.url+"admin/page-folders",
+                                             cmsAnchor: "pages-accordion-anchor",
+                                             cmsText: "Adding Folder" })%>
+      </div>
+
+  </div>
+</div>

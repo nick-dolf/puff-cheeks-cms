@@ -1,3 +1,51 @@
 <%- include("base/head", { page: { title: "Registration", description: "Register user" }})%>
-<h1>Register</h1>
+
+<header class="login-header">
+  <h1><%- site.title %> ADMIN</h1>
+  <p>Puff Cheeks CMS</p>
+</header>
+
+<main>
+  <form class="login" action="<%- site.url %>admin/register" method="post">
+    <header>
+      <h1>Register Admin</h1>
+    </header>
+    <div class="floating-label">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email">
+    </div>
+    <div class="floating-label">
+      <label for="password">Password</label>
+      <button class="button-ghost toggle-password" type="button">
+        <%- include("./components/icon-svg", {symbol: "eye-fill",
+                                              color: "grey",
+                                              width: 20 }) %>
+        <%- include("./components/icon-svg", {symbol: "eye-slash-fill",
+                                              color: "grey", 
+                                              width: 20,
+                                              class: "icon-transparent" }) %>
+      </button>
+      <input type="password" name="password" id="password">
+    </div>
+    <div class="floating-label">
+      <label for="confirmPassword">Confirm password</label>
+      <button class="button-ghost toggle-password" type="button">
+        <%- include("./components/icon-svg", {symbol: "eye-fill",
+                                              color: "grey",
+                                              width: 20 }) %>
+        <%- include("./components/icon-svg", {symbol: "eye-slash-fill",
+                                              color: "grey", 
+                                              width: 20,
+                                              class: "icon-transparent" }) %>
+      </button>
+      <input type="password" name="confirmPassword" id="confirmPassword">
+    </div>
+    <% if (page.info) { %>
+      <p><%- page.info %></p>
+    <% } %>
+    <button class="button button-link" type="submit">Register</button>
+  </form>
+</main>
+
+<script src="<%= site.url %>admin/assets/public/visibility.js"></script>
 <%- include("base/foot")%>

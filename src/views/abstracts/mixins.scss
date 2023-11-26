@@ -25,16 +25,16 @@
 
 /* COMMON SPACINGS */
 @mixin spacing-std {
-  padding: 16px;
-  margin: 32px 16px;
+  padding: 15px;
+  margin: 0px 5px;
 
   @include tablet {
-    padding: 32px;
-    margin: 24px 32px;
+    padding: 20px;
+    margin: 0 30px;
   }
 
   @include desktop {
-    margin: 24px auto;
+    margin: 0 auto;
     width: $std-content-width-percent;
     max-width: $std-content-width-max;
   }

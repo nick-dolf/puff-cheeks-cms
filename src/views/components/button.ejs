@@ -1,0 +1,23 @@
+<button type="button"
+  class="button button-<%- locals.color %> <%- locals.extraClass %> <% if (locals.spinner) { %>button-svg<% } %>"
+  <% if (locals.id) { %> id="<%= locals.id %>" <% } %>
+  <% if (locals.cms) { %> data-cms="<%= locals.cms %>" <% } %>
+  <% if (locals.cmsAnchor) { %> data-cms-anchor="<%= locals.cmsAnchor %>" <% } %>
+  <% if (locals.cmsForm) { %> data-cms-form="<%= locals.cmsForm %>" <% } %>
+  <% if (locals.cmsModal) { %> data-cms-modal="<%= locals.cmsModal %>" <% } %>
+  <% if (locals.cmsText) { %> data-cms-text="<%= locals.cmsText %>" <% } %>
+  <% if (locals.cmsTarget) { %> data-cms-target="<%= locals.cmsTarget %>" <% } %>
+  <% if (locals.cmsUrl) { %> data-cms-url="<%= locals.cmsUrl %>" <% } %>
+  <% if (locals.cmsValue) { %> data-cms-value="<%= locals.cmsValue %>" <% } %>
+  > 
+  <%- locals.text %>
+  <% if (locals.spinner) { %>
+    <svg viewBox="0 0 16 16" fill="currentColor" width="8">
+      <circle cx="8" cy="2" r="2"/>
+      <circle cx="2" cy="6" r="2"/>
+      <circle cx="4" cy="13" r="2"/>
+      <circle cx="12" cy="13" r="2"/>
+      <circle cx="14" cy="6" r="2"/>
+    </svg>
+  <% } %>
+</button>

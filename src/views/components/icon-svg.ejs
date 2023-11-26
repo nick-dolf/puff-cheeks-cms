@@ -1,0 +1,11 @@
+<svg  viewBox="0 0 16 16"
+      width=<%- locals.width ? locals.width : 32 %>
+      <%- locals.height ? "height="+locals.height : "" %>
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-svg 
+             <%- symbol %>
+             <%- locals.color ? "icon-"+locals.color : "icon-black" %>
+             <%- locals.class %>"
+      fill="currentColor">
+  <use xlink:href="<%= site.url %>admin/assets/public/sprites.svg#<%- symbol %>" />
+</svg>

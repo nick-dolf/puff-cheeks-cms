@@ -14,6 +14,7 @@ function setup() {
      * @param {Object} data - Specific page data, added to the page object
      */
     res.adminRender = (file, data) => {
+      if (!data) data = {}
       ejs.renderFile("./src/views/" + file + ".ejs", { page: data, ...app.locals }, (err, html) => {
         if (err) {
           return res.send(`<body >${err.message.replace(/(?:\n)/g, "<br>")}</body>`);

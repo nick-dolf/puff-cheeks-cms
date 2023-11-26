@@ -1,4 +1,23 @@
 {
   "key": "link",
-  "data": []
+  "data": [
+    {
+      "name": "Test",
+      "slug": "test",
+      "folder": "/",
+      "link": "test",
+      "publishedDate": false,
+      "draftedDate": "Sat Nov 25 2023 18:30:19 GMT-0600 (Central Standard Time)",
+      "id": "45bc1955-8e73-4155-988c-dab955732855"
+    },
+    {
+      "name": "Home",
+      "slug": "home",
+      "folder": "/",
+      "link": "home",
+      "publishedDate": false,
+      "draftedDate": "Mon Oct 02 2023 19:08:19 GMT-0500 (Central Daylight Time)",
+      "id": "603f3f67-1e46-471f-aa4c-ca2b206d0a8d"
+    }
+  ]
 }

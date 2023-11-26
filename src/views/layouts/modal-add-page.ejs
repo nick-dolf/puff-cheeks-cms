@@ -1,0 +1,37 @@
+<div id="modal-add-page" class="modal">
+  <div class="modal-content">
+
+      <h2>Add Page</h2>
+
+      <form id="add-page">
+        <div class="floating-label mb-2">
+          <label for="add-page-folder-select" class="input-group-text">Folder</label>
+          <select class="form-select" name="folder" id="add-page-folder-select">
+            <% for (let i=0; i < site.pageFolders.length; i++) { %>
+            <option value="<%= site.pageFolders[i].slug %>"><%= site.pageFolders[i].name %></option>
+            <% } %>
+          </select>
+        </div>
+        <div class="floating-label">
+          <label for="name">Page Name</label>
+          <input type="text" name="name" id="name">
+        </div>
+      </form>
+
+      <div class="modal-buttons">
+        <%- include("../components/button", {text: "Cancel", 
+                                             color:"cancel",
+                                             extraClass: "hide-modal" })%>
+        <%- include("../components/button", {text: "Add", 
+                                             color: "action",
+                                             extraClass: "create",
+                                             spinner: true,
+                                             cmsModal: "modal-add-page", 
+                                             cmsForm: "add-page",
+                                             cmsUrl: site.url+"admin/pages",
+                                             cmsAnchor: "pages-accordion-anchor",
+                                             cmsText: "Adding Page" })%>
+      </div>
+
+  </div>
+</div>

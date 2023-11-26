@@ -1,0 +1,70 @@
+.floating-label {
+  position: relative;
+  font-size: 0;
+
+  label {
+    padding: 2px;
+    border-radius: $border-radius;
+    font-size: 14px;
+    line-height: 14px;
+    position: absolute;
+    top: 4px;
+    left: 9px;
+    color: grey;
+  }
+
+  // Password visibility
+  button {
+    position: absolute;
+    top: 4px;
+    right: 9px;
+    width: 20px;
+    height: 20px;
+  }
+
+  svg {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+
+  .show-password {
+    .eye-fill {
+      opacity: 0;
+    }
+    .eye-slash-fill {
+      opacity: 1;
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    border: 1px solid $outline;
+    border-radius: $border-radius;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 22px 10px 6px 10px;
+    width: 100%;
+    background: $white-subtle-trans;
+
+    &:focus {
+      border: 1px solid black;
+    }
+  }
+
+  select {
+    appearance: none;
+
+    background-image: url('data:image/svg+xml;charset=US-ASCII, %3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"%3E%3Cpath fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 16px top 50%;
+    background-size: 20px auto;
+  }
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

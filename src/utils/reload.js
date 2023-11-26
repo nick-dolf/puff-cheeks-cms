@@ -7,7 +7,7 @@ const connectLivereload = require("connect-livereload");
 /**
  * Starts Live reload in development environment
  */
-function setup() {
+function devReload() {
   if (process.env.NODE_ENV === "development") {
     app.use(connectLivereload());
 
@@ -19,4 +19,4 @@ function setup() {
   }
 }
 
-module.exports = { setup };
+module.exports = { devReload };
