@@ -1,0 +1,25 @@
+<%- include("../base/head", { page: { title: "Pages", description: "Manage Pages" }})%> 
+<%- include("../layouts/header")%>
+
+<!-- Modals -->
+<%- include("../layouts/modal-add-folder")%>
+
+<main class="std">
+
+  <section class="page-heading">
+    <h2>Site Pages</h2>
+    <%- include("../components/button", 
+      { text: "Add Folder", 
+        color: "action",
+        cmsTarget: "modal-add-folder",
+        extraClass: "show-modal" }) 
+    %>
+  </section>
+
+  <section id="pages-accordion-anchor">
+    <%- include("../sections/pages-accordion") %>
+  </section>
+
+</main>
+
+<%- include("../base/foot")%>

@@ -7,6 +7,7 @@
 
 @import "components/buttons";
 @import "components/icons";
+@import "components/cards";
 @import "components/forms";
 @import "components/lists";
 @import "components/page-row";
@@ -14,9 +15,12 @@
 @import "layouts/header";
 @import "layouts/modals";
 
+@import "sections/image-gallery";
 @import "sections/pages-accordion";
 @import "sections/roller";
 
+@import "templates/dev";
+@import "templates/images";
 @import "sections/login";
 
-@import "pages";
+@import "templates/pages";

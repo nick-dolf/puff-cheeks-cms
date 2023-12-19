@@ -1,4 +1,47 @@
 {
   "key": "name",
-  "data": []
+  "data": [
+    {
+      "name": "bark",
+      "uploadEpochTime": 1701494551831,
+      "modifiedEpochTime": "",
+      "generatedEpochTime": "",
+      "height": 780,
+      "width": 1494,
+      "og": {
+        "format": "jpeg",
+        "height": 780,
+        "width": 1494
+      },
+      "id": "791f6bac-35d1-4955-afb3-cc8cf2e35938"
+    },
+    {
+      "name": "southern-live-oak",
+      "uploadEpochTime": 1701034090464,
+      "modifiedEpochTime": "",
+      "generatedEpochTime": "",
+      "height": 500,
+      "width": 1000,
+      "og": {
+        "format": "jpeg",
+        "height": 500,
+        "width": 1000
+      },
+      "id": "283f5f4d-6d63-49a7-b057-5fbb50cfbf25"
+    },
+    {
+      "name": "chipmunk_with_full_cheeks",
+      "uploadEpochTime": 1701032556045,
+      "modifiedEpochTime": "",
+      "generatedEpochTime": "",
+      "height": 1309,
+      "width": 1961,
+      "og": {
+        "format": "jpeg",
+        "height": 1309,
+        "width": 1961
+      },
+      "id": "1713bcfc-b4ac-4797-9f87-ad3596489c75"
+    }
+  ]
 }

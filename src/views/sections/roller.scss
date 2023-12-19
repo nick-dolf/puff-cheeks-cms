@@ -17,9 +17,11 @@
 
   .handle {
     border-radius: $border-radius 0 0 $border-radius;
-    background-color: white;
+    background-color: $white-trans;
     flex-shrink: 0;
     width: 100px;
+    height: 40px;
+    padding: 10px;
     text-align: center;
     transition: all $transition-std;
     font-size: 0;

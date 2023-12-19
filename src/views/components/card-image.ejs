@@ -1,0 +1,17 @@
+<div class="card-image">
+  <%- include("./card-control") %>
+  
+  <h2 class="card-heading"><%- image.name %></h2>
+
+  <img class="" src="<%- site.url %>admin/assets/images/original/thumb/<%- image.name %>.png" alt="<%- image.alt %>" />
+  
+  <p class="image-dimensions"><%- image.width %>w x <%- image.height%>h</p>
+
+  <div class="card-footer">
+    <div class="floating-label">
+      <textarea class="form-control tall" placeholder="Write alt text here" id="<%- image.name %>-alt" name="alt" ><%- image.alt %></textarea>
+      <label for="<%- image.name %>-alt">Alt Text</label>
+    </div>
+  </div>
+    
+</div>

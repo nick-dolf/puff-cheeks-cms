@@ -1,3 +1,4 @@
+const adminUrl = window.location.href.replace(/admin.*/, "admin/");
 /**
  * CRUD
  */
@@ -243,6 +244,62 @@ function selectToggle(event) {
     }
   }
 }
+/**
+ * Image Input Preview
+ */
+$("#image-input").on("change", (event) => {
+  const images = event.target.files;
+  let gallery = $("#input-gallery");
+  gallery.html("");
+
+  if (images) {
+    for (var i = 0; i < images.length; i++) {
+      let reader = new FileReader();
+      reader.onload = (event) => {
+        let image = $("<img height=60/>").attr("src", event.target.result);
+        gallery.append(image);
+      };
+
+      reader.readAsDataURL(images[i]);
+    }
+  }
+});
+
+// Image Submit (POST)
+$("#image-submit").click((event) => {
+  output("Uploading image(s)");
+  const button = event.currentTarget;
+
+  button.classList.add("spinner");
+  button.disabled = true;
+
+  const formData = new FormData(document.getElementById("image-form"));
+
+  $.ajax({
+    url: "",
+    type: "POST",
+    data: formData,
+    enctype: "multipart/form-data",
+    processData: false,
+    contentType: false,
+  })
+    .done((response) => {
+      output("Images Uploaded");
+      console.log("update success", response);
+      $("#image-gallery-anchor").prepend(response);
+      initSortable();
+    })
+    .fail((response) => {
+      output("Failed to upload images", true);
+      console.log("update fail", response.responseText);
+    })
+    .always(() => {
+      button.classList.remove("spinner");
+      button.disabled = false;
+      $("#input-gallery").html("");
+      $("#image-form").trigger("reset");
+    });
+});
 // Add show modal to buttons
 $(document).on("click", ".show-modal", (event) => {
   const showTarget = event.currentTarget.dataset.cmsTarget;
@@ -257,14 +314,11 @@ $(document).on("click", ".show-modal", (event) => {
 });
 
 // Add Hide modal to modal buttons
-const hideModals = document.getElementsByClassName("hide-modal");
-for (let i = 0; i < hideModals.length; i++) {
-  hideModals[i].addEventListener("click", (event) => {
-    const modal = event.target.closest(".modal");
-    modal.style.opacity = 0;
-    modal.style.visibility = "hidden";
-  });
-}
+$(document).on("click", ".hide-modal", (event) => {
+  const modal = event.target.closest(".modal");
+  modal.style.opacity = 0;
+  modal.style.visibility = "hidden";
+});
 
 // Hide Modal if clicked outside of content
 window.onclick = (event) => {
@@ -300,15 +354,31 @@ function output(message, fail) {
   $("#output").animate({ scrollTop: 0 }, "fast");
 }
 
-const adminUrl = window.location.href.replace("/pages", "");
-
 function updateFolders() {
   const folders = $("input[name='folders'").serialize()
 
   $.ajax({
-    url: adminUrl + "/page-folders",
+    url: adminUrl + "page-folders",
     type: "PUT",
     data: folders,
+  })
+}
+
+function updatePages() {
+  const pages = $("input[name='pages'")
+
+  let data = { }
+  data.links = [];
+  data.folders = [];
+  pages.each( function(index) {
+    data.links.push(this.value)
+    data.folders.push(this.closest(".roller").children[0].value)
+  })
+
+  $.ajax({
+    url: adminUrl + "pages",
+    type: "PUT",
+    data: $.param(data),
   })
 }
 window.addEventListener("load", (event) => {
@@ -366,5 +436,6 @@ function initSortable() {
   $("#sectionAnchor").sortable({ handle: ".handle", update: orderSections });
   $(".block-anchor").sortable({ handle: ".handle", update: orderSections });
   $("#pages-accordion").sortable({ handle: ".handle", update: updateFolders });
+  $(".pages-anchors").sortable({ handle: ".page-row-handle", update: updatePages, connectWith: ".pages-anchors" });
 }
 initSortable();

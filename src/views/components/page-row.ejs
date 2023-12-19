@@ -1,18 +1,19 @@
 <!-- Page List Item for Page Accordion -->
 <li class="page-row">
-  
+  <input name="pages" type="text" value=<%- page.link %> hidden >
   <!-- Handle -->
+  <% if (page.link != "home") { %>
   <div class="page-row-handle">
-    <%- include("../components/icon-svg", {symbol:"grip-horizontal", 
-                                           color: "black", 
-                                           width: 30})%>
+    <%- include("../components/icon-grip-small")%>
   </div>
+  <% } else { %>
+    <div class="handle-stub"></div>
+  <% } %>
 
 
   <!-- Drop Menu -->
   <div class="drop-icon">
-    <%- include("../components/icon-svg", {symbol: "nut", 
-                                           width: 20 }) %>
+    <%- include("../components/icon-menu" ) %>
     <div class="drop-icon-menu">
       <%- include("../components/button", {text: "Delete", 
                       color:"danger", 

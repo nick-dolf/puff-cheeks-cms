@@ -2,7 +2,10 @@
 <header class="site-header">
   <div class="content">
     <div>
-      <h1><a href="<%= site.url %>admin/"><%- site.title%> Admin</a></h1>
+      <div class="logo-container">
+        <%- include("../components/icon-svg", {symbol: "logo", width: 40}) %>
+        <h1><a href="<%= site.url %>admin/"><%- site.title%> Admin</a></h1>
+      </div>
       <nav class="header-nav">
 
         <!-- Pages -->

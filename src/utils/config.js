@@ -16,15 +16,15 @@ async function verify() {
   try {
     let ignoreData = fse.readFileSync(".gitignore").toString();
 
-    if (!ignoreData.match(/# Tree Rat/)) {
+    if (!ignoreData.match(/# Puff Cheeks/)) {
       if (ignoreData.length == 0) {
-        fse.appendFileSync(".gitignore", `# Tree Rat\n`);
+        fse.appendFileSync(".gitignore", `# Puff Cheeks\n`);
         ignoreData += "\n"
       } else if (ignoreData.slice(-1) == "\n") {
-        fse.appendFileSync(".gitignore", `\n# Tree Rat\n`);
+        fse.appendFileSync(".gitignore", `\n# Puff Cheeks\n`);
         ignoreData += "\n"
       } else {
-        fse.appendFileSync(".gitignore", `\n\n# Tree Rat\n`);
+        fse.appendFileSync(".gitignore", `\n\n# Puff Cheeks\n`);
         ignoreData += "\n"
       }
     }
@@ -59,7 +59,7 @@ async function verify() {
       }
     }
   } catch {
-    fse.writeFileSync(".gitignore", `# Tree Rat\n.env\nsecrets`);
+    fse.writeFileSync(".gitignore", `# Puff Cheeks\n.env\nsecrets`);
   }
 
   // Check .env is setup properly
@@ -110,19 +110,19 @@ async function verify() {
   }
 
   if (restart) {
-    console.log("Tree Rat needs a restart to update settings\nPlease run it again.");
+    console.log("Puff Cheeks needs a restart to update settings\nPlease run it again.");
     process.exit(0);
   }
 
-  // Verify tree-rat.json exists for settings
-  if (!fse.existsSync("tree-rat.json")) {
+  // Verify puff-cheeks.json exists for settings
+  if (!fse.existsSync("puff-cheeks.json")) {
     const pretty = JSON.stringify({
       enableGzipCompression: false,
       enableAutoPrefixer: false,
       stagingUrl: "/",
       productionUrl: "/",
     }, null, 2)
-    fse.writeFileSync("tree-rat.json", pretty)
+    fse.writeFileSync("puff-cheeks.json", pretty)
   }
 }
 

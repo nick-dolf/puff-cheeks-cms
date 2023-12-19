@@ -1,51 +1,61 @@
-<% let openFolder, newPage; %> 
-<% if (page) { openFolder = page.changedFolder; %> 
-<% newPage = page.new } %>
-<% let openBaseFolder = (false) %>
+<% 
+let openFolder, newPage; 
+if (page) { 
+  openFolder = page.changedFolder; 
+  newPage = page.new
+} 
+let openBaseFolder = (false) 
+%>
 
+<%- include("../layouts/modal-add-page")%>
 <div id="pages-accordion" class="accordion">
   <!-- Site Folders -->
-  <% for (let i=0; i < site.pageFolders.length; i++) { const folder = site.pageFolders[i];%>
+  <% for (let i=0; i < site.pageFolders.length; i++) { const folder = site.pageFolders[i]; %>
     <section class="roller">
       <input name="folders" type="text" value=<%- folder.slug %> hidden >
-      <header class="roller-header <% if (openFolder == folder.slug) { %>show-on-load<% } %>">
+
+      <header class="roller-header <% if (openFolder == folder.slug || site.pageFolders.length < 2) { %>show-on-load<% } %>">
         <div class="handle">
-          <%- include("../components/icon-svg", {symbol:"grip-horizontal", 
-                                                 color: "black", 
-                                                 width: 100,
-                                                 height: 40 })%>
+          <%- include("../components/icon-grip-large") %>
         </div>
         <button class="button-ghost roller-toggle">
           <h1><%- site.pageFolders[i].name %></h1>
-          <%- include("../components/icon-svg", {symbol:"chevron", 
-                                                 color: "black", 
-                                                 width: 24})%>
+          <%- include("../components/icon-svg", 
+            { symbol:"chevron", 
+              color: "black", 
+              width: 24 })
+          %>
         </button>
-        <%- include("../components/button", {text: "Add&nbsp;Page", 
-                                          color: "action",
-                                          cmsTarget: "modal-add-page",
-                                          cmsValue: folder.slug,
-                                          extraClass: "show-modal roller-actions" }) %>
+        <%- include("../components/button", 
+          { text: "Add&nbsp;Page", 
+            color: "action",
+            cmsTarget: "modal-add-page",
+            cmsValue: folder.slug,
+            extraClass: "show-modal roller-actions" }) 
+        %>
       </header>
-      <div class="roller-body <% if (openFolder == folder.slug) { %>show-on-load<% } %>">
-        <ul class="roller-content">
+
+      <div class="roller-body <% if (openFolder == folder.slug || site.pageFolders.length < 2) { %>show-on-load<% } %>">
+        <ul class="roller-content pages-anchors">
         <% let empty = true; for (let j=0; j < site.pages.length; j++) { if ( site.pages[j].folder == site.pageFolders[i].slug )  { empty = false; %>
           <%- include("../components/page-row", { page : {...site.pages[j], newPage} } )%>
           <% }} %>
           <% if (empty && folder.slug != "/") { %>
     
             <%- include("../components/button", 
-            {text: "Delete Folder", 
-                  color:"danger", 
-                  extraClass:"delete",
-                  spinner: true,
-                  cms: site.pageFolders[i].slug,
-                  cmsAnchor:"pages-accordion-anchor",
-                  cmsUrl:site.url+"admin/page-folders",
-                  cmsText: "Do you really want to delete: " }) %>  
+              { text: "Delete Folder", 
+                color:"danger", 
+                extraClass:"delete",
+                spinner: true,
+                cms: site.pageFolders[i].slug,
+                cmsAnchor:"pages-accordion-anchor",
+                cmsUrl:site.url+"admin/page-folders",
+                cmsText: "Do you really want to delete: " }) 
+            %>  
           <% } %>
         </ul>
       </div>
+
     </section>
   <% } %>
 </div>

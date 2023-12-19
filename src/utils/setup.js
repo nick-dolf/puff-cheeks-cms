@@ -1,5 +1,5 @@
 const fse = require("fs-extra");
-const app = require("../tree-rat");
+const app = require("../puff-cheeks-cms");
 const path = require("path")
 const PuffCheeksStorage = require("puff-cheeks")
 
@@ -7,7 +7,7 @@ const PuffCheeksStorage = require("puff-cheeks")
  * Sets up local variables
  */
 function variables() {
-  const config = fse.readJsonSync("tree-rat.json");
+  const config = fse.readJsonSync("puff-cheeks.json");
 
   app.locals.site = {};
   app.locals.site.title = config.siteTitle;

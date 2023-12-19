@@ -1,5 +1,4 @@
 {
-  "siteTitle": "CEIC",
   "enableGzipCompression": false,
   "enableAutoPrefixer": false,
   "stagingUrl": "/",

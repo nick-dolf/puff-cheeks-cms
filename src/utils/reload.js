@@ -1,4 +1,4 @@
-const app = require("../tree-rat");
+const app = require("../puff-cheeks-cms");
 const chokidar = require("chokidar");
 const livereload = require("livereload");
 const liveReloadServer = livereload.createServer();

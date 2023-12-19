@@ -1,4 +1,4 @@
-const app = require("../tree-rat");
+const app = require("../puff-cheeks-cms");
 const cookieSession = require("cookie-session");
 const express = require("express");
 const { body, validationResult } = require("express-validator");
@@ -14,9 +14,7 @@ router.use(
   })
 );
 
-router.get("/", (req, res) => {
-  res.adminRender("dashboard");
-});
+
 
 router.use("/assets/public", express.static("./src/assets/public"));
 
@@ -149,12 +147,28 @@ router.use((req, res, next) => {
   }
 });
 
+/**
+ * Logout User
+ */
+router.get("/logout", (req, res) => {
+  req.session.loggedin = false;
+
+  res.adminRender("login", { info: "You are logged out" } );
+})
+
+router.get("/", (req, res) => {
+  res.adminRender("templates/dashboard");
+});
+
 // routes
 router.use("/pages", require("./pages"));
+router.use("/images", require("./images"));
 
 router.use("/assets", require("./assets"));
 router.use("/page-folders", require("./page-folders"));
 router.use("/assets", express.static("./src/assets"));
+router.use("/assets/images", express.static("images"));
+
 
 if (process.env.NODE_ENV === "development") {
   router.use("/dev", require("./dev"));

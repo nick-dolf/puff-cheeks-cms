@@ -4,9 +4,14 @@
   background-color: $tree-green;
   color: white;
   
+  .logo-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
   h1 {
     text-align: center;
-    margin: 0 0 30px 0;
     line-height: 1;
   }
 

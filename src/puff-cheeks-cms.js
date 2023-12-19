@@ -4,7 +4,7 @@ require("dotenv").config({ override: true });
 const PORT = process.env.PORT;
 const express = require("express");
 const app = express();
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 module.exports = app;
 
 require("./utils/config").verify();
@@ -30,7 +30,7 @@ app.use(express.static("site"));
 app.use("/admin", require("./routes/admin"));
 
 app.listen(PORT, () => {
-  console.log(`\n--\nTree Rat CMS Starting`);
+  console.log(`\n--\nPuff Cheeks CMS Starting`);
   console.log(`Environment: ${process.env.NODE_ENV}`);
   console.log(`Port: ${PORT}`);
   console.log(`Site: http://localhost:${PORT}/`);

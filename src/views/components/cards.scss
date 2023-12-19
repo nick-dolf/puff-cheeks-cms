@@ -1,0 +1,46 @@
+.card-control {
+  display: flex;
+  justify-content: space-between;
+  border-radius: $border-radius $border-radius 0 0;
+
+  .handle, .menu {
+    cursor: pointer;
+    height: 36px;
+    width: 80px;
+    padding: 5px;
+    font-size: 0;
+
+    &:hover {
+      background-color: $dark-trans;
+      color: white;
+    }
+  }
+}
+
+.card-heading {
+  margin: 0 5px;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+img {
+  padding: 0 5px;
+}
+
+.card-footer {
+  padding: 0 5px 5px 5px;
+}
+
+.card-image {
+  color: black;
+  border-radius: $border-radius;
+  background-color: $white-trans;
+
+  p {
+    font-style: italic;
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 0 5px;
+  }
+
+}

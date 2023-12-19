@@ -1,0 +1,1 @@
+const adminUrl = window.location.href.replace(/admin.*/, "admin/");

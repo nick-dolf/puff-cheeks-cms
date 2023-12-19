@@ -12,14 +12,11 @@ $(document).on("click", ".show-modal", (event) => {
 });
 
 // Add Hide modal to modal buttons
-const hideModals = document.getElementsByClassName("hide-modal");
-for (let i = 0; i < hideModals.length; i++) {
-  hideModals[i].addEventListener("click", (event) => {
-    const modal = event.target.closest(".modal");
-    modal.style.opacity = 0;
-    modal.style.visibility = "hidden";
-  });
-}
+$(document).on("click", ".hide-modal", (event) => {
+  const modal = event.target.closest(".modal");
+  modal.style.opacity = 0;
+  modal.style.visibility = "hidden";
+});
 
 // Hide Modal if clicked outside of content
 window.onclick = (event) => {

@@ -1,5 +1,5 @@
 // Imports
-const app = require("../tree-rat");
+const app = require("../puff-cheeks-cms");
 const fse = require("fs-extra");
 const express = require("express");
 const path = require("path");
@@ -70,7 +70,7 @@ router.post("*", body("name").isString().isLength({ min: 2 }).trim(), (req, res)
 / Read (GET)
 */
 router.get("/", (req, res) => {
-  res.adminRender("pages", {link: "pages"});
+  res.adminRender("templates/pages", {link: "pages"});
 });
 
 router.get("/*", (req, res) => {
@@ -92,25 +92,28 @@ router.get("/*", (req, res) => {
 / Update (PUT)
 */
 router.put("/*", upload.none(), (req, res) => {
-  const link = req.url.slice(1)
-  const pageFile = path.join(draftDir, link)+".json";
-  const pageData = req.body;
+  app.locals.pages.sortByKey(req.body.links)
+  console.log(req.body)
 
-  // Update pages
-  let page = app.locals.pages.findById(link)
-  page.draftedDate = new Date().toString();
-  app.locals.pages.update(page)
+  // check if page has moved folders
+  for (let i = 0; i < req.body.links.length; i++) {
+    page = app.locals.pages.findByKey(req.body.links[i])
+    if (!page) {
+      console.log(req.body.links);
+    } 
 
-  // Save Page Data to JSON
-  fse
-    .outputFile(pageFile, JSON.stringify(pageData, null, 2))
-    .then(() => {
-      res.adminRender("layouts/page-form", pageData );
-    })
-    .catch((err) => {
-      console.error(err.message);
-      res.status(500).end();
-    });
+    if (page.folder != req.body.folders[i]) {
+      page.folder = req.body.folders[i];
+      console.log(page.folder, page.slug)
+      let link = path.join(page.folder, page.slug)
+      if (link[0] == "/") {
+        link = link.slice(1)
+      }
+      console.log(link, page.link)
+      app.locals.pages.update[page]
+    }
+  }
+  res.send("ok")
 });
 
 

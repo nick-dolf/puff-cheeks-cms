@@ -19,18 +19,22 @@
       </form>
 
       <div class="modal-buttons">
-        <%- include("../components/button", {text: "Cancel", 
-                                             color:"cancel",
-                                             extraClass: "hide-modal" })%>
-        <%- include("../components/button", {text: "Add", 
-                                             color: "action",
-                                             extraClass: "create",
-                                             spinner: true,
-                                             cmsModal: "modal-add-page", 
-                                             cmsForm: "add-page",
-                                             cmsUrl: site.url+"admin/pages",
-                                             cmsAnchor: "pages-accordion-anchor",
-                                             cmsText: "Adding Page" })%>
+        <%- include("../components/button", 
+          { text: "Cancel", 
+            color:"cancel",
+            extraClass: "hide-modal" })
+        %>
+        <%- include("../components/button", 
+          { text: "Add", 
+            color: "action",
+            extraClass: "create",
+            spinner: true,
+            cmsModal: "modal-add-page", 
+            cmsForm: "add-page",
+            cmsUrl: site.url+"admin/pages",
+            cmsAnchor: "pages-accordion-anchor",
+            cmsText: "Adding Page" })
+        %>
       </div>
 
   </div>

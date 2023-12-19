@@ -1,0 +1,5 @@
+<div class="image-gallery">
+  <% for (let i =0; i < site.images.length; i++) { const image = site.images[i]; %>
+    <%- include("../components/card-image", {image}) %>
+  <% } %>
+</div>

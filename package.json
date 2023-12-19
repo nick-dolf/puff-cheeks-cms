@@ -1,17 +1,17 @@
 {
-  "name": "tree-rat",
+  "name": "puff-cheeks-cms",
   "version": "1.0.0",
   "description": "Content Management and site builder.",
-  "main": "./src/tree-rat.js",
+  "main": "./src/puff-cheeks-cms.js",
   "bin": {
-    "tree-rat": "./src/tree-rat.js"
+    "puff-cheeks-cms": "./src/puff-cheeks-cms.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nick-dolf/tree-rat.git"
+    "url": "git+https://github.com/nick-dolf/puff-cheeks-cms.git"
   },
   "keywords": [
     "CMS"
@@ -19,9 +19,9 @@
   "author": "Nick Dolf",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nick-dolf/tree-rat/issues"
+    "url": "https://github.com/nick-dolf/puff-cheeks-cms/issues"
   },
-  "homepage": "https://github.com/nick-dolf/tree-rat#readme",
+  "homepage": "https://github.com/nick-dolf/puff-cheeks-cms#readme",
   "dependencies": {
     "autoprefixer": "^10.4.15",
     "chokidar": "^3.5.3",
@@ -38,6 +38,7 @@
     "postcss": "^8.4.30",
     "puff-cheeks": "^1.0.0",
     "sass": "^1.67.0",
+    "sharp": "^0.32.6",
     "slugify": "^1.6.6",
     "validator": "^13.11.0"
   }

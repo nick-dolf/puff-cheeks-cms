@@ -6,7 +6,7 @@ $std-content-width-percent: 94%;
 $std-content-width-max: 1400px;
 
 /*  */
-$border-radius: 4px;
+$border-radius: 5px;
 
 /* COLOR */
 $tree-bark: rgba($color: #000, $alpha: 0.3);
@@ -38,6 +38,11 @@ $dark-subtle-trans: rgba($color: #000, $alpha: 0.4);
 $dark-trans: rgba($color: #000, $alpha: 0.6);
 $white-trans: rgba($color: #fff, $alpha: 0.94);
 $white-subtle-trans: rgba($color: #fff, $alpha: 0.8);
+
+/* SPACINGS*/
+$spacing-1: 5px;
+$spacing-2: 10px;
+$spacing-3: 15px;
 
 /* TIMINGS */
 $transition-fast: 0.3s;

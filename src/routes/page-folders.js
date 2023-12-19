@@ -1,4 +1,4 @@
-const app = require("../tree-rat");
+const app = require("../puff-cheeks-cms");
 const fse = require("fs-extra");
 const express = require("express");
 const router = express.Router();

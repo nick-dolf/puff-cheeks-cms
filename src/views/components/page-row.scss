@@ -1,5 +1,5 @@
 .page-row {
-  background: $white-trans;
+  
   border-radius: $border-radius;
   color: black;
   list-style-type: none;
@@ -14,17 +14,36 @@
     flex-wrap: nowrap;
   }
 
-  .page-row-handle {
-    cursor: pointer;
-    background-color: white;
+  .handle-stub {
+    background: $white-trans;
     width: 80px;
-    display: flex;
-    justify-content: center;
+    height: 36px;
 
     border-top-left-radius: $border-radius;
 
     @include tablet {
       border-bottom-left-radius: $border-radius;
+    }
+  }
+
+  .page-row-handle {
+    background: $white-trans;
+    cursor: pointer;
+    width: 80px;
+    height: 36px;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: center;
+    transition: all $transition-std;
+    border-top-left-radius: $border-radius;
+
+    @include tablet {
+      border-bottom-left-radius: $border-radius;
+    }
+
+    &:hover {
+      color: white;
+      background-color: $dark-trans;
     }
   }
 
@@ -35,6 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
     @include tablet {
       border-bottom-right-radius: $border-radius;
@@ -51,10 +71,12 @@
   }
 
   .page-row-name {
+    background: $white-trans;
     min-height: 3.5rem;
     padding: 0 20px;
     display: flex;
     align-items: center;
+    flex-grow: 1;
 
     h2 {
       font-size: 1.8rem;
@@ -71,12 +93,14 @@
   }
 
   .filler {
+    background: $white-trans;
     @include tablet {
       flex: 1;
     }
   }
 
   .publish-state {
+    background: $white-trans;
     min-height: 3.5rem;
     padding: 0 20px;
     display: flex;
@@ -87,13 +111,17 @@
 }
 
 .drop-icon {
+  background: $white-trans;
   width: 60px;
+  height: 36px;
+  padding: 8px 10px;
   transition: all $transition-std;
   display: flex;
   justify-content: center;
-
+  flex-grow: 1;
 
   @include tablet {
+    flex-grow: 0;
     order:5;
   }
 
@@ -104,7 +132,7 @@
     background: $dark-trans;
     position: absolute;
 
-    transform: translateY(3.5rem) scaleY(0);
+    transform: translateY(2.8rem) scaleY(0);
     transition: all $transition-std;
   }
 
@@ -113,7 +141,7 @@
     background: $dark-trans;
 
     .drop-icon-menu {
-      transform: translateY(3.5rem) scaleY(1);
+      transform: translateY(2.8rem) scaleY(1);
     }
   }
 }

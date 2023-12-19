@@ -1,4 +1,4 @@
-const app = require("../tree-rat")
+const app = require("../puff-cheeks-cms")
 const ejs = require("ejs")
 const fse = require("fs-extra");
 

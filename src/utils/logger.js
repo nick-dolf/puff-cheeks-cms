@@ -1,4 +1,4 @@
-const app = require("../tree-rat");
+const app = require("../puff-cheeks-cms");
 
 function dev() {
   if (process.env.NODE_ENV === "development") {
