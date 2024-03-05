@@ -2,13 +2,13 @@
   "key": "link",
   "data": [
     {
-      "name": "Home",
-      "slug": "home",
+      "name": "Test",
+      "slug": "test",
       "folder": "/",
-      "link": "home",
+      "link": "test",
       "publishedDate": false,
-      "draftedDate": "Sun Nov 26 2023 08:56:38 GMT-0600 (Central Standard Time)",
-      "id": "fb03e477-28b5-49f1-b908-ef0900112928"
+      "draftedDate": "Sat Dec 02 2023 21:06:44 GMT-0600 (Central Standard Time)",
+      "id": "314acc91-a5d9-4242-821b-0e790cef66aa"
     },
     {
       "name": "About",
@@ -20,13 +20,13 @@
       "id": "b12faef1-4164-4ac4-8bad-057befd406f9"
     },
     {
-      "name": "Test",
-      "slug": "test",
+      "name": "Home",
+      "slug": "home",
       "folder": "/",
-      "link": "test",
+      "link": "home",
       "publishedDate": false,
-      "draftedDate": "Sat Dec 02 2023 21:06:44 GMT-0600 (Central Standard Time)",
-      "id": "314acc91-a5d9-4242-821b-0e790cef66aa"
+      "draftedDate": "Sun Nov 26 2023 08:56:38 GMT-0600 (Central Standard Time)",
+      "id": "fb03e477-28b5-49f1-b908-ef0900112928"
     }
   ]
 }
